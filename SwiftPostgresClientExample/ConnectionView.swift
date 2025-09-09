@@ -57,36 +57,46 @@ struct ConnectionView: View {
                         do {
                             try await connect()
                         } catch {
-                            print("error")
+                            connectionStatus = "Error: \(error)"
                         }
                     }
                 }
             }
             
-            if let connectionStatus = connectionStatus {
-                Section(header: Text("Status")) {
-                    Text(connectionStatus)
-                        .foregroundColor(connectionStatus.contains("Success") ? .green : .red)
-                }
+            if let connectionStatus {
+                Text(connectionStatus)
+                    .foregroundColor(connectionStatus.contains("Success") ? .green : .red)
             }
         }
         .padding()
     }
     
+    private func credential()  -> Credential? {
+        if useTrust {
+            return .trust
+        } else if !password.isEmpty {
+            if useTLS {
+                return .scramSHA256(password: password, channelBindingPolicy: .preferred)
+            } else {
+                return .cleartextPassword(password: password)
+            }
+        } else {
+            connectionStatus = "Please enter a password or enable 'Use Trust'"
+            return nil
+        }
+    }
+    
     private func connect() async throws {
-        
         let connection = try await Connection.connect(
             host: host,
             port: port,
             useTLS: useTLS
         )
-        try await connection.authenticate(user: user, database: database, credential: .trust)
+        guard let credential = self.credential() else {
+            return
+        }
+        try await connection.authenticate(user: user, database: database, credential: credential)
         viewModel = try await WeatherViewModel(connection: connection)
         dismiss()
     }
 }
-
-
-//#Preview {
-//  ConnectionView()
-//}
