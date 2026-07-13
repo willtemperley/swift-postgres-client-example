@@ -19,7 +19,7 @@
 
 import SwiftPostgresClient
 
-struct WeatherRow: @nonisolated Decodable, Equatable, Identifiable {
+nonisolated struct WeatherRow: Decodable, Equatable, Identifiable {
     var id: Int
     let date: PostgresDate
     let city: String

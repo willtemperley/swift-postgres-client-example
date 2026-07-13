@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BE5F1F062E6FCB93005167DE /* SwiftPostgresClient in Frameworks */ = {isa = PBXBuildFile; productRef = BE5F1F052E6FCB93005167DE /* SwiftPostgresClient */; };
+		BE1E55D22E7036EC00752FD2 /* SwiftPostgresClient in Frameworks */ = {isa = PBXBuildFile; productRef = BE1E55D12E7036EC00752FD2 /* SwiftPostgresClient */; };
+		BE5A3DFF3003977D004D1186 /* SwiftPostgresClient in Frameworks */ = {isa = PBXBuildFile; productRef = BE5A3DFE3003977D004D1186 /* SwiftPostgresClient */; };
+		BE5A3E423004B606004D1186 /* SwiftPostgresClient in Frameworks */ = {isa = PBXBuildFile; productRef = BE5A3E413004B606004D1186 /* SwiftPostgresClient */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +48,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE5F1F062E6FCB93005167DE /* SwiftPostgresClient in Frameworks */,
+				BE5A3DFF3003977D004D1186 /* SwiftPostgresClient in Frameworks */,
+				BE1E55D22E7036EC00752FD2 /* SwiftPostgresClient in Frameworks */,
+				BE5A3E423004B606004D1186 /* SwiftPostgresClient in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,7 +109,9 @@
 			);
 			name = SwiftPostgresClientExample;
 			packageProductDependencies = (
-				BE5F1F052E6FCB93005167DE /* SwiftPostgresClient */,
+				BE1E55D12E7036EC00752FD2 /* SwiftPostgresClient */,
+				BE5A3DFE3003977D004D1186 /* SwiftPostgresClient */,
+				BE5A3E413004B606004D1186 /* SwiftPostgresClient */,
 			);
 			productName = SwiftPostgresClientExample;
 			productReference = BE5F1EDA2E6FCB16005167DE /* SwiftPostgresClientExample.app */;
@@ -184,7 +190,7 @@
 			mainGroup = BE5F1ED12E6FCB16005167DE;
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
-				BE5F1F042E6FCB93005167DE /* XCRemoteSwiftPackageReference "swift-postgres-client" */,
+				BE5A3E403004B606004D1186 /* XCRemoteSwiftPackageReference "swift-postgres-client" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = BE5F1EDB2E6FCB16005167DE /* Products */;
@@ -630,7 +636,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BE5F1F042E6FCB93005167DE /* XCRemoteSwiftPackageReference "swift-postgres-client" */ = {
+		BE5A3E403004B606004D1186 /* XCRemoteSwiftPackageReference "swift-postgres-client" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/willtemperley/swift-postgres-client";
 			requirement = {
@@ -641,9 +647,17 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BE5F1F052E6FCB93005167DE /* SwiftPostgresClient */ = {
+		BE1E55D12E7036EC00752FD2 /* SwiftPostgresClient */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BE5F1F042E6FCB93005167DE /* XCRemoteSwiftPackageReference "swift-postgres-client" */;
+			productName = SwiftPostgresClient;
+		};
+		BE5A3DFE3003977D004D1186 /* SwiftPostgresClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = SwiftPostgresClient;
+		};
+		BE5A3E413004B606004D1186 /* SwiftPostgresClient */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BE5A3E403004B606004D1186 /* XCRemoteSwiftPackageReference "swift-postgres-client" */;
 			productName = SwiftPostgresClient;
 		};
 /* End XCSwiftPackageProductDependency section */
